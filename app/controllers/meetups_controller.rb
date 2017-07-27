@@ -15,18 +15,18 @@ class MeetupsController < ApplicationController
 		@meetup = Meetup.new(meetup_params)
 		@meetup.save
 
-		reidrect_to meetups_path
+		redirect_to meetups_path
 	end
 
 	def edit
-		@meetup = Meetup.find(parmas[:id])
+		@meetup = Meetup.find(params[:id])
 	end
 
 	def update
 		@meetup = Meetup.find(params[:id])
 		@meetup.update(meetup_params)
 
-		reidrect_to meetups_path, notice: "Update Success"
+		redirect_to meetups_path, notice: "Update Success"
 	end
 
 	def destroy
@@ -40,4 +40,5 @@ class MeetupsController < ApplicationController
 
 	def meetup_params
 		params.require(:meetup).permit(:title, :description)
+	end
 end
