@@ -1,10 +1,11 @@
 class MeetupsController < ApplicationController
+	before_action :authenticate_user!, except: [:index, :show]
 	def index
 		@meetups = Meetup.all
 	end
 
 	def show
-		@meetup = Meetup.new
+		@meetup = Meetup.find(params[:id])
 	end
 
 	def new
