@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'rspec-rails', '~> 3.5.2'
+gem 'rails-controller-testing'
 
 
 group :development, :test do
